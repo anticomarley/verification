@@ -1,0 +1,40 @@
+{% extends "everify/register.html" %}
+{% load crispy_forms_tags %}
+{% block register %}
+<div id="content">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box">
+                    <h2 class="text-uppercase">Student / Alumni</h2>
+
+                    <p class="lead">Not registered as a student or alumni yet?</p>
+                    <p>With Everify the entire process of verification is now at your fingertips with click of button. We provide direct Access to the verification webpage of the Institute, to enhance your certificate verification service. </br> Everify provides students an online secure repository of verified documents , where students can pre-verify documents, store the pre-verified documents and share the online verified document for job applications, higher studies, HRD/ secretariat attestation's, visa applications, and other electronic document accepting bodies. One time verified document in myeasydocs can be shared multiple. </p>
+                    <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="box">
+                    <h2 class="text-uppercase">Register Here</h2>
+                        <form action="" method="POST" enctype='multipart/form-data'>
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <div class="text-center">
+                               <button type="submit" name="submit" value="submit" class="btn btn-template-main"><i class="fa fa-user-md"></i> Register</button>
+                            </div>
+                        </form>
+                    <hr>
+                    <p class="text-muted">Already have an account? <a href="contact.html">SIGN IN</a></p>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /#content -->
+{% endblock %}
